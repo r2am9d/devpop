@@ -31,7 +31,7 @@ $ flutter run --flavor staging --target lib/main_staging.dart
 $ flutter run --flavor production --target lib/main_production.dart
 ```
 
-_\*Devpop works on iOS, Android, Web, and Windows._
+_\*Devpop works on iOS and Android._
 
 ---
 
@@ -61,7 +61,7 @@ This project relies on [flutter_localizations][flutter_localizations_link] and f
 
 ### Adding Strings
 
-1. To add a new localizable string, open the `app_en.arb` file at `lib/l10n/arb/app_en.arb`.
+1. To add a new localizable string, open the `app_en.arb` file at `lib/core/l10n/arb/app_en.arb`.
 
 ```arb
 {
@@ -111,7 +111,6 @@ Update the `CFBundleLocalizations` array in the `Info.plist` at `ios/Runner/Info
     <key>CFBundleLocalizations</key>
 	<array>
 		<string>en</string>
-		<string>es</string>
 	</array>
 
     ...
@@ -124,8 +123,7 @@ Update the `CFBundleLocalizations` array in the `Info.plist` at `ios/Runner/Info
 ```
 ├── l10n
 │   ├── arb
-│   │   ├── app_en.arb
-│   │   └── app_es.arb
+│   │   └── app_en.arb
 ```
 
 2. Add the translated strings to each `.arb` file:
@@ -142,18 +140,6 @@ Update the `CFBundleLocalizations` array in the `Info.plist` at `ios/Runner/Info
 }
 ```
 
-`app_es.arb`
-
-```arb
-{
-    "@@locale": "es",
-    "counterAppBarTitle": "Contador",
-    "@counterAppBarTitle": {
-        "description": "Texto mostrado en la AppBar de la página del contador"
-    }
-}
-```
-
 ### Generating Translations
 
 To use the latest translations changes, you will need to generate them:
@@ -161,7 +147,7 @@ To use the latest translations changes, you will need to generate them:
 1. Generate localizations for the current project:
 
 ```sh
-flutter gen-l10n --arb-dir="lib/l10n/arb"
+flutter gen-l10n --arb-dir="lib/core/l10n/arb"
 ```
 
 Alternatively, run `flutter run` and code generation will take place automatically.
