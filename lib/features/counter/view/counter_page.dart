@@ -1,5 +1,5 @@
-import 'package:devpop/counter/counter.dart';
-import 'package:devpop/l10n/l10n.dart';
+import 'package:devpop/core/l10n/l10n.dart';
+import 'package:devpop/features/counter/counter.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
