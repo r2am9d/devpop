@@ -7,13 +7,20 @@ environment:
   sdk: ^3.5.0
 
 dependencies:
-  bloc: ^9.0.0
   flutter:
     sdk: flutter
+
+  # State Mgmt
+  bloc: ^9.0.0
   flutter_bloc: ^9.1.0
+
+  # Localization
   flutter_localizations:
     sdk: flutter
   intl: ^0.19.0
+
+  # Helpers
+  logger: ^2.5.0
 
 dev_dependencies:
   bloc_test: ^10.0.0
