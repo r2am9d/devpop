@@ -47,10 +47,10 @@ To view the generated coverage report you can use [lcov](https://github.com/linu
 
 ```sh
 # Generate Coverage Report
-$ genhtml coverage/lcov.info -o coverage/
+$ genhtml coverage/lcov.info -o coverage/html
 
 # Open Coverage Report
-$ open coverage/index.html
+$ open coverage/html/index.html
 ```
 
 ---
@@ -92,7 +92,7 @@ This project relies on [flutter_localizations][flutter_localizations_link] and f
 3. Use the new string
 
 ```dart
-import 'package:devpop/l10n/l10n.dart';
+import 'package:devpop/lib/core/l10n/l10n.dart';
 
 @override
 Widget build(BuildContext context) {
@@ -118,7 +118,7 @@ Update the `CFBundleLocalizations` array in the `Info.plist` at `ios/Runner/Info
 
 ### Adding Translations
 
-1. For each supported locale, add a new ARB file in `lib/l10n/arb`.
+1. For each supported locale, add a new ARB file in `lib/core/l10n/arb`.
 
 ```
 ├── l10n
