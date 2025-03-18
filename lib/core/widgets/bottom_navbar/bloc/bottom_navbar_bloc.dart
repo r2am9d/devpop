@@ -29,8 +29,8 @@ class BottomNavbarBloc extends Bloc<BottomNavbarEvent, BottomNavbarState>
   ) async {
     try {
       emit(BottomNavbarIndex(index: event.index));
-    } catch (e, stackTrace) {
-      AppLogger.error(e.toString(), error: e, stackTrace: stackTrace);
+    } catch (e, trace) {
+      AppLog.e(e.toString(), error: e, trace: trace); // coverage:ignore-line
     }
   }
 }

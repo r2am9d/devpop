@@ -6,10 +6,10 @@ import 'package:flutter/widgets.dart';
 
 Future<void> bootstrap(FutureOr<Widget> Function() builder) async {
   FlutterError.onError = (err) {
-    AppLogger.error(
+    AppLog.e(
       err.exceptionAsString(),
       error: err,
-      stackTrace: err.stack,
+      trace: err.stack,
     );
   };
 

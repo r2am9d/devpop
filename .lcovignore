@@ -1,0 +1,7 @@
+# Remove specific files
+*_event.dart
+*_state.dart
+
+# Remove directories
+lib/core/utils/*
+lib/core/l10n/*

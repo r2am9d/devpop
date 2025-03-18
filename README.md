@@ -37,20 +37,12 @@ _\*Devpop works on iOS and Android._
 
 ## Running Tests 🧪
 
-To run all unit and widget tests use the following command:
+To run all unit and widget tests use the following bash script.
+It uses [lcov](https://github.com/linux-test-project/lcov) to view the 
+generated report.
 
 ```sh
-$ flutter test --coverage --test-randomize-ordering-seed random
-```
-
-To view the generated coverage report you can use [lcov](https://github.com/linux-test-project/lcov).
-
-```sh
-# Generate Coverage Report
-$ genhtml coverage/lcov.info -o coverage/html
-
-# Open Coverage Report
-$ open coverage/html/index.html
+$ ./coverage.sh
 ```
 
 ---

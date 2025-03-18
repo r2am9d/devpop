@@ -11,12 +11,12 @@ class AdvancedConsoleOutput extends LogOutput {
   }
 }
 
-class AppLogger {
-  factory AppLogger() => _instance;
+class AppLog {
+  factory AppLog() => _instance;
 
-  AppLogger._internal();
+  AppLog._internal();
 
-  static final AppLogger _instance = AppLogger._internal();
+  static final AppLog _instance = AppLog._internal();
   static final Logger _logger = Logger(
     filter: DevelopmentFilter(),
     printer: PrettyPrinter(
@@ -31,45 +31,45 @@ class AppLogger {
     output: AdvancedConsoleOutput(),
   );
 
-  static void debug(
+  static void d(
     dynamic message, {
     DateTime? time,
     Object? error,
-    StackTrace? stackTrace,
+    StackTrace? trace,
   }) {
     _logger.d(
       message,
       time: time,
       error: error,
-      stackTrace: stackTrace,
+      stackTrace: trace,
     );
   }
 
-  static void warning(
+  static void w(
     dynamic message, {
     DateTime? time,
     Object? error,
-    StackTrace? stackTrace,
+    StackTrace? trace,
   }) {
     _logger.w(
       message,
       time: time,
       error: error,
-      stackTrace: stackTrace,
+      stackTrace: trace,
     );
   }
 
-  static void error(
+  static void e(
     dynamic message, {
     DateTime? time,
     Object? error,
-    StackTrace? stackTrace,
+    StackTrace? trace,
   }) {
     _logger.e(
       message,
       time: time,
       error: error,
-      stackTrace: stackTrace,
+      stackTrace: trace,
     );
   }
 }

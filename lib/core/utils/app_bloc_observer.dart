@@ -1,5 +1,5 @@
 import 'package:bloc/bloc.dart';
-import 'package:devpop/core/utils/app_logger.dart';
+import 'package:devpop/core/utils/app_log.dart';
 
 class AppBlocObserver extends BlocObserver {
   const AppBlocObserver();
@@ -10,7 +10,7 @@ class AppBlocObserver extends BlocObserver {
     Change<dynamic> change,
   ) {
     super.onChange(bloc, change);
-    AppLogger.debug('onChange(${bloc.runtimeType}, $change)');
+    AppLog.d('onChange(${bloc.runtimeType}, $change)');
   }
 
   @override
@@ -19,10 +19,10 @@ class AppBlocObserver extends BlocObserver {
     Object error,
     StackTrace stackTrace,
   ) {
-    AppLogger.error(
+    AppLog.e(
       'onError(${bloc.runtimeType})',
       error: error,
-      stackTrace: stackTrace,
+      trace: stackTrace,
     );
     super.onError(bloc, error, stackTrace);
   }
