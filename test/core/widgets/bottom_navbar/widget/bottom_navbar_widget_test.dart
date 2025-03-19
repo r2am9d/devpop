@@ -27,10 +27,10 @@ void main() {
   });
 
   group('BottomNavbarWidget', () {
-    testWidgets('Should render [BottomNavbarWidget] with initial state',
+    testWidgets('Render [BottomNavbarWidget] with initial state',
         (tester) async {
       await tester.pumpApp(
-        BlocProvider.value(
+        BlocProvider<BottomNavbarBloc>.value(
           value: BottomNavbarBloc(),
           child: const BottomNavbarWidget(),
         ),
@@ -45,10 +45,10 @@ void main() {
       expect(find.byIcon(Icons.favorite_border), findsOneWidget);
     });
 
-    testWidgets('Should change selected index when an item is tapped',
+    testWidgets('Change selected index when an item is tapped',
         (WidgetTester tester) async {
       await tester.pumpApp(
-        BlocProvider.value(
+        BlocProvider<BottomNavbarBloc>.value(
           value: BottomNavbarBloc(),
           child: const BottomNavbarWidget(),
         ),
@@ -71,10 +71,10 @@ void main() {
       expect((bnBloc.state as BottomNavbarIndex).index, 1);
     });
 
-    testWidgets('Should display active icon when an item is selected',
+    testWidgets('Display active icon when an item is selected',
         (WidgetTester tester) async {
       await tester.pumpApp(
-        BlocProvider.value(
+        BlocProvider<BottomNavbarBloc>.value(
           value: BottomNavbarBloc(),
           child: const BottomNavbarWidget(),
         ),

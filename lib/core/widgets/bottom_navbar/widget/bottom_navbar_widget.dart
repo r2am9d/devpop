@@ -1,3 +1,4 @@
+import 'package:devpop/core/utils/utils.dart';
 import 'package:devpop/core/widgets/bottom_navbar/bottom_navbar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -24,6 +25,7 @@ class BottomNavbarWidget extends StatelessWidget {
             ),
           ),
           child: SalomonBottomBar(
+            key: AppKeys.bottomNavbarWidget.bottomNavbar,
             currentIndex: bnIndex.index,
             onTap: (i) => bnBloc.add(BottomNavbarSetIndex(index: i)),
             items: [
