@@ -1,8 +1,9 @@
 import 'package:bloc_test/bloc_test.dart';
 import 'package:devpop/core/widgets/bottom_navbar/bottom_navbar.dart';
-import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:mocktail/mocktail.dart';
 import 'package:salomon_bottom_bar/salomon_bottom_bar.dart';
 
@@ -11,6 +12,9 @@ import '../../../../helpers/helpers.dart';
 class MockBottomNavbarBloc
     extends MockBloc<BottomNavbarEvent, BottomNavbarState>
     implements BottomNavbarBloc {}
+
+Finder findByFAIcon(IconData icon) =>
+    find.byWidgetPredicate((widget) => widget is FaIcon && widget.icon == icon);
 
 void main() {
   late BottomNavbarBloc bnBloc;
@@ -37,12 +41,24 @@ void main() {
       );
 
       // Verify [SalomonBottomBar] is rendered
-      expect(find.byType(SalomonBottomBar), findsOneWidget);
+      expect(
+        find.byType(SalomonBottomBar),
+        findsOneWidget,
+      );
 
       // Verify initial icons are displayed
-      expect(find.byIcon(Icons.home), findsOneWidget);
-      expect(find.byIcon(Icons.search), findsOneWidget);
-      expect(find.byIcon(Icons.favorite_border), findsOneWidget);
+      expect(
+        findByFAIcon(FontAwesomeIcons.sharpSolidHouse),
+        findsOneWidget,
+      );
+      expect(
+        findByFAIcon(FontAwesomeIcons.sharpLightMagnifyingGlass),
+        findsOneWidget,
+      );
+      expect(
+        findByFAIcon(FontAwesomeIcons.sharpLightHeart),
+        findsOneWidget,
+      );
     });
 
     testWidgets('Change selected index when an item is tapped',
@@ -58,7 +74,8 @@ void main() {
       expect(bnBloc.state as BottomNavbarInitial, isA<BottomNavbarInitial>());
 
       // Tap on the second item
-      await tester.tap(find.byIcon(Icons.search));
+      await tester
+          .tap(findByFAIcon(FontAwesomeIcons.sharpLightMagnifyingGlass));
       await tester.pumpAndSettle();
 
       // Simulate a state change to index 1
@@ -81,10 +98,13 @@ void main() {
       );
 
       // Verify initial icon is displayed
-      expect(find.byIcon(Icons.favorite_border), findsOneWidget);
+      expect(
+        findByFAIcon(FontAwesomeIcons.sharpLightHeart),
+        findsOneWidget,
+      );
 
       // Tap on the last item
-      await tester.tap(find.byIcon(Icons.favorite_border));
+      await tester.tap(findByFAIcon(FontAwesomeIcons.sharpLightHeart));
       await tester.pumpAndSettle();
 
       // Simulate state change to index 2
@@ -94,7 +114,10 @@ void main() {
       await tester.pumpAndSettle();
 
       // Verify active icon is displayed
-      expect(find.byIcon(Icons.favorite), findsOneWidget);
+      expect(
+        findByFAIcon(FontAwesomeIcons.sharpSolidHeart),
+        findsOneWidget,
+      );
     });
   });
 }

@@ -168,6 +168,13 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
+  font_awesome_flutter:
+    dependency: "direct main"
+    description:
+      path: "packages/font_awesome_flutter"
+      relative: true
+    source: path
+    version: "10.8.0"
   frontend_server_client:
     dependency: transitive
     description:
