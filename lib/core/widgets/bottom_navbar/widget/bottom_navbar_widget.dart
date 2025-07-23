@@ -26,17 +26,19 @@ class BottomNavbarWidget extends StatelessWidget {
             ),
           ),
           child: SalomonBottomBar(
-            key: AppKeys.bottomNavbarWidget.bottomNavbar,
+            key: AppKeys.bottomNavbarKey.bottomNavbar,
             currentIndex: bnIndex.index,
             onTap: (i) => bnBloc.add(BottomNavbarSetIndex(index: i)),
             items: [
               SalomonBottomBarItem(
+                key: AppKeys.bottomNavbarKey.homeIcon,
                 icon: const FaIcon(FontAwesomeIcons.sharpLightHouse),
                 title: const Text('Home'),
                 selectedColor: Colors.purple,
                 activeIcon: const FaIcon(FontAwesomeIcons.sharpSolidHouse),
               ),
               SalomonBottomBarItem(
+                key: AppKeys.bottomNavbarKey.searchIcon,
                 icon: const FaIcon(FontAwesomeIcons.sharpLightMagnifyingGlass),
                 title: const Text('Search'),
                 selectedColor: Colors.purple,
@@ -44,6 +46,7 @@ class BottomNavbarWidget extends StatelessWidget {
                     const FaIcon(FontAwesomeIcons.sharpSolidMagnifyingGlass),
               ),
               SalomonBottomBarItem(
+                key: AppKeys.bottomNavbarKey.savedIcon,
                 icon: const FaIcon(FontAwesomeIcons.sharpLightHeart),
                 title: const Text('Saved'),
                 selectedColor: Colors.purple,

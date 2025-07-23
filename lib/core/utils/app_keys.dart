@@ -7,5 +7,5 @@ class AppKeys {
 
   static final AppKeys _instance = AppKeys._internal();
 
-  static final bottomNavbarWidget = BottomNavbarKey();
+  static final bottomNavbarKey = BottomNavbarKey();
 }

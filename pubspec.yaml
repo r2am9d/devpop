@@ -27,12 +27,22 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
   mocktail: ^1.0.4
+  patrol: ^3.15.1
   very_good_analysis: ^7.0.0
 
 dependency_overrides:
   font_awesome_flutter:
     path: packages/font_awesome_flutter
+  salomon_bottom_bar:
+    path: packages/salomon_bottom_bar
 
 flutter:
   uses-material-design: true
   generate: true
+
+patrol:
+  app_name: Devpop
+  android:
+    package_name: com.neatadmiral.apps.devpop
+  ios:
+    bundle_id: com.neatadmiral.apps.devpop
